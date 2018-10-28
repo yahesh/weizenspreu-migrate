@@ -14,7 +14,7 @@
   // prevent script from getting called directly
   if (!defined("URLAUBE")) { die(""); }
 
-  class MigrateHandler extends BaseSingleton implements Handler {
+  class WeizenspreuMigrateHandler extends BaseSingleton implements Handler {
 
     // CONSTANTS
 
@@ -167,4 +167,4 @@
   }
 
   // register handler
-  Handlers::register(MigrateHandler::class, "run", ErrorHandler::REGEX, [GET, POST], ERROR);
+  Handlers::register(WeizenspreuMigrateHandler::class, "run", ErrorHandler::REGEX, [GET, POST], ERROR);
