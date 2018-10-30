@@ -167,4 +167,4 @@
   }
 
   // register handler
-  Handlers::register(WeizenspreuMigrateHandler::class, "run", ErrorHandler::REGEX, [GET, POST], ERROR);
+  Handlers::register(WeizenspreuMigrateHandler::class, "run", WeizenspreuMigrateHandler::REGEX, [GET, POST], ERROR);
