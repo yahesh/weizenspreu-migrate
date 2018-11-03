@@ -44,7 +44,7 @@
                                      "((?P<day>[0-9]+)\/)?".
                                      "(page\/(?P<page>[0-9]+)\/)?".
                                      "$~"),
-                            [ArchiveHandler::YEAR => null,
+                            [ArchiveHandler::YEAR  => null,
                              ArchiveHandler::MONTH => null,
                              ArchiveHandler::DAY   => null,
                              PAGE                  => 1],
