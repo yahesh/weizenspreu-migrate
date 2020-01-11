@@ -4,7 +4,7 @@
     This is a custom migration plugin.
 
     @package yahesh\weizenspreu-migrate
-    @version 0.1a0
+    @version 0.1a1
     @author  Yahe <hello@yahe.sh>
     @since   0.1a0
   */
@@ -94,7 +94,7 @@
           $metadata = static::parseArchive(relativeuri());
           if ($metadata instanceof Content) {
             if (null !== preparecontent(ArchiveHandler::getContent($metadata, $pagecount))) {
-              $result = relocate(ArchiveHandler::getUri($metadata), true, true);
+              $result = relocate(ArchiveHandler::getUri($metadata), true, false);
             }
           }
         }
@@ -104,7 +104,7 @@
           $metadata = static::parseCategory(relativeuri());
           if ($metadata instanceof Content) {
             if (null !== preparecontent(CategoryHandler::getContent($metadata, $pagecount))) {
-              $result = relocate(CategoryHandler::getUri($metadata), true, true);
+              $result = relocate(CategoryHandler::getUri($metadata), true, false);
             }
           }
         }
@@ -139,7 +139,7 @@
               $metadata->merge($subdata);
 
               if (null !== preparecontent(FeedHandler::getContent($metadata, $pagecount))) {
-                $result = relocate(FeedHandler::getUri($metadata), true, true);
+                $result = relocate(FeedHandler::getUri($metadata), true, false);
               }
             }
           }
@@ -150,14 +150,14 @@
           $metadata = static::parsePage(relativeuri());
           if ($metadata instanceof Content) {
             if (null !== preparecontent(PageHandler::getContent($metadata, $pagecount))) {
-              $result = relocate(PageHandler::getUri($metadata), true, true);
+              $result = relocate(PageHandler::getUri($metadata), true, false);
             }
           }
         }
 
         // if nothing matched we redirect to the final target
         if (!$result) {
-          $result = relocate(Handlers::get(static::class), true, true);
+          $result = relocate(Handlers::get(static::class), true, false);
         }
       }
 
