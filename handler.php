@@ -123,7 +123,7 @@
             $subdata = static::parseArchive($suburl);
             if ($subdata instanceof Content) {
               // store the name of the feed source
-              $metadata->set(FeedHandler::FEED, ArchivHandler::class);
+              $metadata->set(FeedHandler::FEED, ArchiveHandler::class);
             } else {
               // check if we have a category feed
               $subdata = static::parseCategory($suburl);
